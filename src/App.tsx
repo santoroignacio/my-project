@@ -1,6 +1,6 @@
 
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 import { Navbar } from './NavBar';
 import { RutaNoValida } from './RutaNoValida';
 import { useCallback, useEffect } from 'react'
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
 
         <Navbar />
 
@@ -42,7 +42,7 @@ function App() {
 
 
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
 
     </div>
   );

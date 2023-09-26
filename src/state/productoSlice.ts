@@ -41,3 +41,16 @@ export const getProductos = createAsyncThunk<Producto[]>(
       }
     }
   )
+
+  export const createProductos = createAsyncThunk<Producto, Object>(
+    "productos/createProductos",
+    async (data, thunkAPI) => {
+      try {
+        const response = await axios.post('https://644697040431e885f0168f18.mockapi.io/Productos/', data)
+        thunkAPI.dispatch(getProductos())
+        return response.data
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error)
+      }
+    }
+  )

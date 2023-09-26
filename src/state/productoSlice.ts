@@ -54,3 +54,28 @@ export const getProductos = createAsyncThunk<Producto[]>(
       }
     }
   )
+
+  export const updateProductos = createAsyncThunk<Producto, Producto>(
+    "productos/updateProductos",
+    async (data, thunkAPI) => {
+      try {
+        const response = await axios.put(`https://644697040431e885f0168f18.mockapi.io/Productos/${data.id}`, data)
+        return response.data
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error)
+      }
+    }
+  )
+  
+  export const deleteProductos = createAsyncThunk<string, string>(
+    "productos/deleteProductos",
+    async (id, thunkAPI) => {
+      try {
+        const response = await axios.delete(`https://644697040431e885f0168f18.mockapi.io/Productos/${id}`)
+        thunkAPI.dispatch(getProductos())
+        return response.data
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error)
+      }
+    }
+  )

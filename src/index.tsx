@@ -6,15 +6,18 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import { Provider } from 'react-redux';
 import { store } from './state/store';
+import { HashRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
+  <HashRouter>
  /*  <React.StrictMode> */
  <Provider store={store}>
  <App />
 </Provider>
 /* </React.StrictMode> */
+</HashRouter>
 );
 

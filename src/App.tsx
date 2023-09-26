@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <HashRouter>
+     
 
         <Navbar />
 
@@ -42,7 +42,7 @@ function App() {
 
 
         </Routes>
-      </HashRouter>
+      
 
     </div>
   );

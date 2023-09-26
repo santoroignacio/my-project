@@ -1,0 +1,15 @@
+.SingleProductoPage .jumbotron {
+    margin: 10px;
+    background-color: #333;
+    color: aliceblue;
+    font-weight: 700;
+    font-size: large;
+}
+
+.SingleProductoPage .jumbotron h6 {
+    text-align: justify
+}
+
+.SingleProductoPage .jumbotron h3 {
+    background-color: #555;
+}

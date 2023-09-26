@@ -79,3 +79,39 @@ export const getProductos = createAsyncThunk<Producto[]>(
       }
     }
   )
+
+  export const productoSlice = createSlice({
+    name: 'productos',
+    initialState,
+    reducers: {
+      setProductos: (state, action: PayloadAction<Producto[]>) => {
+        state.productos = action.payload
+      },
+    },
+    extraReducers: (builder) => {
+      builder.addCase(getProductos.pending, (state) => {
+        state.loading = true
+      })
+      builder.addCase(getProductos.fulfilled, (state, action) => {
+        state.productos = action.payload
+        state.loading = false
+      })
+      builder.addCase(getProductos.rejected, (state, action) => {
+        state.loading = false
+        state.errors = action.payload
+      })
+      builder.addCase(getProductosById.pending, (state) => {
+        state.loading = true
+      })
+      builder.addCase(getProductosById.fulfilled, (state, action) => {
+        state.singleProducto = action.payload
+        state.loading = false
+      })
+      builder.addCase(updateProductos.fulfilled, (state, action) => {
+        state.singleProducto = action.payload
+      })
+      builder.addCase(deleteProductos.fulfilled, (state, action) => {
+        state.productos = state.productos?.filter(producto => producto.id !== action.payload)!
+      })
+    }
+  })

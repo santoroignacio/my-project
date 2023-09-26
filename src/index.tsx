@@ -12,12 +12,14 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <HashRouter>
- /*  <React.StrictMode> */
- <Provider store={store}>
- <App />
-</Provider>
-/* </React.StrictMode> */
-</HashRouter>
+
+  <React.StrictMode>
+    <HashRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </HashRouter>
+ </React.StrictMode > 
+
 );
 

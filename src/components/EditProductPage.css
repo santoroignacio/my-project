@@ -1,0 +1,33 @@
+.EditProductPage {
+    text-align: left;
+}
+
+.EditProductPage h2,
+h3 {
+    text-align: center;
+    color: aliceblue;
+}
+
+.fullwidth {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    display: block;
+    text-align: center;
+}
+
+.EditProductPage .jumbotron {
+    margin: 10px;
+    background-color: #444;
+    color: aliceblue;
+    font-weight: 300;
+    font-size: large;
+}
+
+.EditProductPage .jumbotron .btn {
+    color: aliceblue;
+    font-weight: 300;
+    font-size: large;
+}
